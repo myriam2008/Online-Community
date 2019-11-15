@@ -1,0 +1,36 @@
+{
+  "name": "online-community",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "mdbreact": "^4.21.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "3.2.0",
+    "sqlite": "^3.0.3"
+  },
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail --names \"back,front\" \"npm run back\" \"npm run front\"",
+    "back": "cd back && npm start",
+    "front": "cd front && npm start",
+    "build": "react-scripts build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eject": "react-scripts eject",
+    "postinstall": "cd front && npm install && cd .. && cd back && npm install"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
